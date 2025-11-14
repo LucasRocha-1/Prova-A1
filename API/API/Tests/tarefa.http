@@ -1,0 +1,17 @@
+### Requisição para a raiz
+GET http://localhost:5011/
+
+### Listar todas as tarefas
+GET http://localhost:5011/api/tarefas/listar
+
+### Cadastrar uma nova tarefa
+POST http://localhost:5011/api/tarefas/cadastrar
+Content-Type: application/json
+
+{
+    "titulo": "Estudar Node.js"
+}
+
+### Alterar tarefa por id
+PATCH http://localhost:5011/api/produto/alterar/d997041f-c5b7-402b-be27-d338546981b0
+Content-Type: application/json
