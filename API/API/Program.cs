@@ -2,8 +2,8 @@ using API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
+Console.Clear();
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddDbContext<AppDataContext>();
 
 //Adicionar o serviço de banco de dados na aplicação
 builder.Services.AddDbContext<AppDataContext>();

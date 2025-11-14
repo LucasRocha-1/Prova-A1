@@ -18,7 +18,7 @@ function CadastrarTarefa() {
       const tarefa: Tarefa = {
         titulo, status,
       };
-      const resposta = await axios.post("http://localhost:5011/pages/tarefa/cadastrar", tarefa);            
+      const resposta = await axios.post("http://localhost:5011/api/tarefa/cadastrar", tarefa);            
       console.log(await resposta.data);
     } catch (error : any) {
       if(error.status === 40){

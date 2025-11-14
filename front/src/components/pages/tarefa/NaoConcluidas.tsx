@@ -23,7 +23,7 @@ function NaoConcluidas() {
   async function buscarTarefasAPI() {
     try {
       const resposta = await axios.get(
-        "http://localhost:5011/pages/tarefas/listar"
+        "http://localhost:5011/api/tarefas/naoconcluidas"
       );
       setTarefas(resposta.data);
     } catch (error) {
@@ -31,9 +31,19 @@ function NaoConcluidas() {
     }
   }
 
+    async function alterarTarefa(id : string){    
+    try {
+      const resposta = await axios.delete(`http://localhost:5011/api/tarefa/alterar/${id}`);
+
+      buscarTarefasAPI();
+    } catch (error) {
+      console.log("Erro ao alterar o produto: " + error);
+    }
+  }
+
   //O return é a parte visual do componente
   return (
-    <div id="listar_tarefas">
+    <div id="listar_tarefas_nao_concluidas">
       <h1>Listar Tarefas Não Concluídas</h1>
       <table>
         <thead>
@@ -42,6 +52,7 @@ function NaoConcluidas() {
             <th>Titulo</th>
             <th>Status</th>
             <th>Criado Em</th>
+            <th>Aterar</th>
           </tr>
         </thead>
         <tbody>
@@ -50,6 +61,7 @@ function NaoConcluidas() {
               <td>{tarefa.Titulo}</td>
               <td>{tarefa.Status}</td>
               <td>{tarefa.criadoEm}</td>
+              <button onClick={() => alterarTarefa(tarefa.TarefaId!)}>Alterar</button>
             </tr>
           ))}
         </tbody>

@@ -10,7 +10,7 @@ import Tarefa from "../../../models/Tarefa";
 // - Precisa retornar apenas um elemento HTML pai
 // - Exportar o componente
 
-function AlterarTarefa() {
+function NaoConcluidas() {
   //Estados - Variáveis
   const [tarefas, setTarefas] = useState<Tarefa[]>([]);
 
@@ -23,7 +23,7 @@ function AlterarTarefa() {
   async function buscarTarefasAPI() {
     try {
       const resposta = await axios.get(
-        "http://localhost:5011/pages/tarefas/listar"
+        "http://localhost:5011/api/tarefas/concluidas"
       );
       setTarefas(resposta.data);
     } catch (error) {
@@ -33,8 +33,8 @@ function AlterarTarefa() {
 
   //O return é a parte visual do componente
   return (
-    <div id="alterar_tarefas">
-      <h1>Alterar Tarefas Não Concluídas</h1>
+    <div id="listar_tarefas_concluidas">
+      <h1>Listar Tarefas Concluídas</h1>
       <table>
         <thead>
           <tr>
@@ -42,6 +42,7 @@ function AlterarTarefa() {
             <th>Titulo</th>
             <th>Status</th>
             <th>Criado Em</th>
+            <th>Aterar</th>
           </tr>
         </thead>
         <tbody>
@@ -58,4 +59,4 @@ function AlterarTarefa() {
   );
 }
 
-export default AlterarTarefa;
+export default NaoConcluidas;
