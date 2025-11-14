@@ -1,6 +1,6 @@
 import React from "react";
-import ListarProdutos from "./components/pages/produto/naoconcluidas";
-import CadastrarProduto from "./components/pages/produto/CadastrarProduto";
+import NaoConcluidas from "./components/pages/tarefa/NaoConcluidas";
+import CadastrarTarefa from "./components/pages/tarefa/CadastrarTarefa";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -16,16 +16,16 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/">Listar Produtos</Link>
+              <Link to="/">Listar Tarefas Não Concluidas</Link>
             </li>
             <li>
-              <Link to="/produto/cadastrar"> Cadastrar Produtos </Link>
+              <Link to="/tarefa/CadastrarTarefa"> Cadastrar Tarefas </Link>
             </li>
           </ul>
         </nav>
         <Routes>
-          <Route path="/" element={<ListarProdutos/>} />
-          <Route path="/produto/cadastrar" element={<CadastrarProduto/>} />
+          <Route path="/" element={<NaoConcluidas/>} />
+          <Route path="/tarefa/CadastrarTarefa" element={<CadastrarTarefa/>} />
         </Routes>
         <footer>
           Rodapé da aplicação
