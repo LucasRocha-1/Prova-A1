@@ -2,7 +2,6 @@ using API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-Console.Clear();
 var builder = WebApplication.CreateBuilder(args);
 
 //Adicionar o serviço de banco de dados na aplicação
