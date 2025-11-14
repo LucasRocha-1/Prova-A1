@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Produto from "../../../models/Produto";
+import Produto from "../../../models/Tarefa";
 import axios from "axios";
 
 function CadastrarProduto() {

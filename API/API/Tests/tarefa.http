@@ -13,5 +13,11 @@ Content-Type: application/json
 }
 
 ### Alterar tarefa por id
-PATCH http://localhost:5011/api/produto/alterar/d997041f-c5b7-402b-be27-d338546981b0
+PATCH http://localhost:5011/api/tarefas/alterar/d997041f-c5b7-402b-be27-d338546981b0
 Content-Type: application/json
+
+### Listar todos os produtos
+GET http://localhost:5011/api/tarefas/naoconcluidas
+
+### Listar todos os produtos
+GET http://localhost:5011/api/tarefas/concluidas

@@ -2,6 +2,12 @@
 
 public class Tarefa
 {
+    //Construtor
+    public Tarefa()
+    {
+        TarefaId = Guid.NewGuid().ToString();
+        CriadoEm = DateTime.Now;
+    }
     public string TarefaId { get; set; } = Guid.NewGuid().ToString();
     public string? Titulo { get; set; }
     public DateTime CriadoEm { get; set; } = DateTime.Now;

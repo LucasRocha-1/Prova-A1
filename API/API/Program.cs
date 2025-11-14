@@ -81,8 +81,18 @@ app.MapGet("/api/tarefas/naoconcluidas", ([FromServices] AppDataContext ctx,
 });
 
 //GET: http://localhost:5273/tarefas/concluidas
-app.MapGet("/api/tarefas/concluidas", ([FromServices] AppDataContext ctx) =>
+app.MapGet("/api/tarefas/concluidas", ([FromServices] AppDataContext ctx,
+[FromBody] Tarefa tarefa) =>
 {
+            //Validar se existe alguma coisa dentro da lista    
+    if (ctx.Tarefas.Any())
+    {
+        if (tarefa.Status == "Concluída")
+        {
+            return Results.Ok(ctx.Tarefas.ToList());
+        }
+    }
+    return Results.BadRequest("Lista vazia");
     //Implementar a listagem de tarefas concluídas
 });
 
